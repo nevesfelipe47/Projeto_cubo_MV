@@ -151,7 +151,16 @@
 
 --------3) FAZER UM SELECT COM TODOS OS CóDIGOS DAS CONTAS COM MAIS DE R$1000,00 NO MêS DE
 --------SETEMBRO DE 2017. TRAZER CóDIGOS DA CONTA E VALOR, ORDENADOS POR VALOR DECRESCENTE.
+
 --------4) QUANTIDADE DE PACIENTES ATENDIDOS NO ANO DE 2016.
+
+                SELECT  Count (atendime.cd_paciente) qtd
+                FROM  atendime, paciente
+                WHERE atendime.cd_paciente = paciente.cd_paciente
+                AND   atendime.dt_atendimento BETWEEN To_Date('01/01/2016','dd/mm/yyyy')
+                                                  AND To_Date('31/12/2016','dd/mm/yyyy')
+
+
 
 --------5) FAZER UM SELECT COM O SOMATóRIO DE FATURAMENTO EM INTERNAÇÃO POR PRESTADOR NO ANO
 --------DE 2018. DICA: AGRUPAR PELO PRESTADOR O SOMATóRIO DE VALORES UNITáRIOS.
